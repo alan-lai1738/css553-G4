@@ -1,0 +1,19 @@
+# Files that git should ignore during commits
+
+# OS X Desktop Services Store
+.DS_STORE
+
+# npm debug log
+npm-debug.log
+
+# Installed node modules
+node_modules/
+
+# Sublime Text project configuration files
+linkedin-pdf-to-json.sublime-project
+linkedin-pdf-to-json.sublime-workspace
+
+# jasmine examples
+lib/
+spec/jasmine_examples
+spec/helpers/jasmine_examples

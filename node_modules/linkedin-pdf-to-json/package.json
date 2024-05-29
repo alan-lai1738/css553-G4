@@ -1,0 +1,39 @@
+{
+    "name": "linkedin-pdf-to-json",
+    "version": "1.5.2",
+    "description": "Converts a LinkedIn profile PDF to JSON.",
+    "main": "./index.js",
+    "scripts": {
+        "test": "jasmine JASMINE_CONFIG_PATH=test/spec/support/jasmine.json"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacmast/linkedin-pdf-to-json.git"
+    },
+    "keywords": [
+        "lptj",
+        "linkedin",
+        "pdf",
+        "json",
+        "profile",
+        "parse"
+    ],
+    "author": "Isaac Mast <isaac.k.mast@gmail.com>",
+    "bin": {
+        "lptj": "./bin/linkedin_pdf_to_json.js"
+    },
+    "devDependencies": {
+        "chalk": "~1.1.3",
+        "commander": "~2.9.0",
+        "jasmine": "~2.4.1"
+    },
+    "dependencies": {
+        "jsonfile": "~2.3.1",
+        "pdf-text": "git://github.com/isaacmast/node-pdf-text.git#master"
+    },
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/isaacmast/linkedin-pdf-to-json/issues"
+    },
+    "homepage": "https://github.com/isaacmast/linkedin-pdf-to-json#readme"
+}
