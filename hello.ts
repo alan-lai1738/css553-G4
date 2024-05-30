@@ -1,8 +1,12 @@
-import LinkedInPdfToJson from "linkedin-pdf-to-json";
+import PDFParser from "./pdf-import/index";
 
-console.log('Hello World!');
-var linkedinPdfToJson = new LinkedInPdfToJson();
-const inputFilePath = "jdoe.pdf";
-const outputFilePath = "output/data.json";
-const data = linkedinPdfToJson.run(inputFilePath, outputFilePath);
+
+async function testReadFile() {
+    const parser = new PDFParser();
+
+    const result = await parser.readFile("SophiaFeng.pdf");
+    console.log('Parsed JSON Data:', result);
+}
+
+testReadFile();
 
