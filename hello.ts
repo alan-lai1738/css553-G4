@@ -1,10 +1,8 @@
-const fs = require('fs');
-const PDFParser = require('pdf2json');
+import LinkedInPdfToJson from "linkedin-pdf-to-json";
 
-const pdfParser = new PDFParser();
-
-
+console.log('Hello World!');
 var linkedinPdfToJson = new LinkedInPdfToJson();
-const inputFilePath = fileName;
+const inputFilePath = "jdoe.pdf";
 const outputFilePath = "output/data.json";
 const data = linkedinPdfToJson.run(inputFilePath, outputFilePath);
+

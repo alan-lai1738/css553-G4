@@ -1,6 +1,7 @@
 {
   "name": "pdf-parser-project",
   "version": "1.0.0",
+  "type": "module",
   "main": "helloworldtest.js",
   "scripts": {
     "start": "node helloworldtest.js",
@@ -25,4 +26,5 @@
     "jasmine": "~2.4.1",
     "linkedin-pdf-to-json": "^1.5.2"
   }
+  
 }
