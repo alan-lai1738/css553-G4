@@ -6,9 +6,9 @@ import { promises as fs } from "node:fs";
 // import { PDFDocument } from "pdf-lib";
 // import Schema from "./schema";
 // import { PDFSchema } from "./schema";
-import { Schema } from "zod";
-import { Parser } from "../interfaces/parser";
-import { PDFResume, PDFSchema } from "./schema";
+// import { Schema } from "zod";
+// // import { Parser } from "../interfaces/parser";
+// import { PDFResume, PDFSchema } from "./schema";
 // import { Json } from "jsonfile";
 import LinkedInPdfToJson from "linkedin-pdf-to-json";
 
@@ -20,32 +20,47 @@ import LinkedInPdfToJson from "linkedin-pdf-to-json";
 // TODO: Plug the interface back in later
 // export class PDFParser implements Parser<File, PDFResume> {
   export class PDFParser  {
-  schema: Schema;
+  //schema: Schema;
 
   constructor() {
     // Initialization if needed
-    this.schema = PDFSchema;
+    //this.schema = PDFSchema;
   }
 
  
 
-  // Method to read a PDF from a File object in the browser
-  async readFile(fileName: File): Promise<JSON> {
-    var linkedinPdfToJson = new LinkedInPdfToJson();
-    const inputFilePath = fileName;
-    const outputFilePath = "temp/data.json";
-    const options = {
-      space: 4  // Define the space for JSON formatting directly here
-    };
-    const data = linkedinPdfToJson.run(inputFilePath, outputFilePath, options);
-    // Read the JSON file created by the LinkedInPdfToJson library
-    const jsonData = await fs.readFile(outputFilePath, { encoding: 'utf8' });
+  // // Method to read a PDF from a File object in the browser
+  // async readFile(fileName: File): Promise<JSON> {
+  //   var linkedinPdfToJson = new LinkedInPdfToJson();
+  //   const inputFilePath = fileName;
+  //   const outputFilePath = "temp/data.json";
+  //   const options = {
+  //     space: 4  // Define the space for JSON formatting directly here
+  //   };
+  //   const data = linkedinPdfToJson.run(inputFilePath, outputFilePath, options);
+  //   // Read the JSON file created by the LinkedInPdfToJson library
+  //   const jsonData = await fs.readFile(outputFilePath, { encoding: 'utf8' });
 
-    // Parse the JSON string back into an object to return
-    return JSON.parse(jsonData);
-  }
+  //   // Parse the JSON string back into an object to return
+  //   return JSON.parse(jsonData);
+  // }
+
+    // Method to read a PDF from a File object in the browser
+    async readFile(fileName: String): Promise<JSON> {
+      var linkedinPdfToJson = new LinkedInPdfToJson();
+      const inputFilePath = fileName;
+      const outputFilePath = "temp/data.json";
+      const options = {
+        space: 4  // Define the space for JSON formatting directly here
+      };
+      const data = linkedinPdfToJson.run(inputFilePath, outputFilePath, options);
+      // Read the JSON file created by the LinkedInPdfToJson library
+      const jsonData = await fs.readFile(outputFilePath, { encoding: 'utf8' });
+  
+      // Parse the JSON string back into an object to return
+      return JSON.parse(jsonData);
+    }
+
 }
-
-
 
 export default PDFParser;
